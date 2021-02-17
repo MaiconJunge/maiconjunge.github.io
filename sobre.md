@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sobre
+title: Sobre Maicon Junge
 ---
 
-This is a static page. It could be an 'about page' if you'd like.
+Em construção...
