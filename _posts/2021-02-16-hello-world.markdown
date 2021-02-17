@@ -5,7 +5,7 @@ date:   2021-02-16 22:47:00
 categories: Diversos
 ---
 <br>
-Como todo site pessoal, é de costume darmos as boas vindas ao público e aproveitar para vender as ideias que irei propor aqui.
+Como todo site pessoal, é de costume darmos as boas vindas ao público e aproveitar para vender as ideias que serão propostas aqui.
 
 Comecei a escrever pela necessidade de espalhar conhecimento e também para melhorar minhas habilidades pessoais.
-hh
+
