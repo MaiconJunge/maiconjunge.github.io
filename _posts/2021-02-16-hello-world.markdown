@@ -12,7 +12,7 @@ Isso nos leva de volta à 2007 quando tive meu primeiro contato com desenvolvime
 Meu nome é Maicon Junge, tenho 31 anos, moro no Rio de Janeiro, sou servidor público, graduando em Ciências Contábeis e aspirante a desenvolvedor de softwares.
 <h4>Apenas sobre desenvolvimento?</h4>
 
-Não! Aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia <a href="/sobre">sobre Maicon Junge</a>.
+Não! Aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia sobre<a href="/sobre"> Maicon Junge</a>.
 
 Se tiver interesse em receber atualizações sobre o blog, se inscreva ou me siga nas redes sociais.
 
