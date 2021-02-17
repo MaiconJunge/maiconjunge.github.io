@@ -9,6 +9,6 @@ Como todo site pessoal, é de costume darmos as boas vindas ao público e aprove
 
 <h3>Apenas sobre desenvolvimento?</h3>
 
-Apesar do blog ser uma experiência de aspirante a programador, aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia sobre Maicon Junge.
+Apesar do blog ser uma experiência de aspirante a programador, aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia <a href="/sobre">sobre Maicon Junge</a>
 
 Enfim, sejam todos bem vindos!
