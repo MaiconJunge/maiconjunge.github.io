@@ -13,3 +13,5 @@ Meu nome é Maicon Junge, tenho 31 anos, moro no Rio de Janeiro, sou servidor p�
 <h4>Apenas sobre desenvolvimento?</h4>
 
 Não! Aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia <a href="/sobre">sobre Maicon Junge</a>.
+
+>Talk is cheap. Show me the code." - Linus Torvalds
