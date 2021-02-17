@@ -52,9 +52,6 @@ about: 'sobre.html'
                 {{ post.categories | array_to_sentence_string | prepend: 'em ' }} 
             {% endif %}
      
-        <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
-      {{ post.date | date_to_string }}
-      </time>
             <time datetime="{{ post.date | date_to_xmlschema }}">
    {% include date.html date=post.date %}
 </time>
