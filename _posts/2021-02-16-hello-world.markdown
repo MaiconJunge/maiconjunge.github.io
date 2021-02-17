@@ -7,10 +7,10 @@ categories: Diversos
 <br>
 Como todo site pessoal, é de costume darmos as boas vindas ao público e aproveitar para vender as ideias que serão propostas aqui. Então “Hello, World!” e bem-vindos ao meu blog. Afinal, foi com um simples “Hello, World!” que me apaixonei pelo mundo da programação.
 
-Isso nos leva de volta à 2007 quando tive meu primeiro contato com desenvolvimento no curso de Ciências da Computação da UERJ. Comecei fazendo pequenos programas em Pascal e Visual Basic, mas abandonei a graduação e fiz um curso técnico em Análises Clínicas na ETER/FAETEC. Trabalhei em instituições públicas e privadas, com cargos e atribuições diversas, mas nunca desisti de estudar programação. Sempre tive vontade de escrever sobre alguns temas, mas nunca tive coragem. Conversando com uns amigos, decidi colocar esse sonho em prática. Começo a escrever pela necessidade de espalhar conhecimento em língua portuguesa para a área de desenvolvimento e, também, para melhorar minhas habilidades pessoais. Meu único objetivo com esse blog é tentar transmitir algum conhecimento que adquiri ao longo desses anos e aprender com vocês também.
+Isso nos leva de volta à 2007 quando tive meu primeiro contato com desenvolvimento no curso de Ciências da Computação da UERJ. Comecei fazendo pequenos programas em Pascal e Visual Basic, mas abandonei a graduação e fiz um curso técnico em Análises Clínicas na ETER/FAETEC. Trabalhei em instituições públicas e privadas, em inúmeros cargos e com atribuições diversas, mas nunca desisti de estudar programação. Também sempre tive vontade de escrever sobre alguns temas, mas nunca tive coragem. Conversando com alguns amigos decidi colocar esse sonho em prática. Começo a escrever pela necessidade de espalhar conhecimento em língua portuguesa para a área de desenvolvimento e, também, para melhorar minhas habilidades pessoais. Meu único objetivo com esse blog é tentar transmitir algum conhecimento que adquiri ao longo desses anos e aprender com vocês também.
 
-Meu nome é Maicon, tenho 31 anos, moro no Rio de Janeiro, sou servidor público e agora quero ser programador. 
+Meu nome é Maicon Juge, tenho 31 anos, moro no Rio de Janeiro, sou servidor público, graduando em Ciências Contábeis e aspirante a programador.
 
 <h4>Apenas sobre desenvolvimento?</h4>
 
-Apesar do blog ser uma experiência de aspirante a programador, aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia <a href="/sobre">sobre Maicon Junge</a>.
+Não! Aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia <a href="/sobre">sobre Maicon Junge</a>.
