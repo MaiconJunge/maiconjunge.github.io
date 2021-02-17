@@ -9,6 +9,6 @@ Como todo site pessoal, é de costume darmos as boas vindas ao público e aprove
 
 Comecei a escrever pela necessidade de espalhar conhecimento em língua portuguesa para a área de desenvolvimento e, também, para melhorar minhas habilidades pessoais.
 
-<h2>Apenas sobre desenvolvimento?</h2>
+<h3>Apenas sobre desenvolvimento?</h3>
 
-Não. Sobre tudo! Apesar do blog ter surgido de uma experiência como  Até sobre minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia sobre Maicon Junge.
+Apesar do blog ser uma experiência de aspirante a programador, não, aqui será sobre tudo, até sobre minha vida, mas sempre voltado aos desenvolvedores. Caso queira conhecer melhor quem eu sou, leia sobre Maicon Junge.
