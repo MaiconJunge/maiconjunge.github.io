@@ -55,6 +55,10 @@ about: 'sobre.html'
         <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
       {{ post.date | date_to_string }}
       </time>
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+   {% include date.html date=post.date %}
+</time>
+
             
         </footer>
     </article>
