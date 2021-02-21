@@ -3,6 +3,7 @@ layout: post
 title:  "Hello World!"
 date:   2021-02-16 22:47:00
 categories: Diversos
+comments: true
 ---
 <br>
 Como todo site pessoal, é de costume darmos as boas vindas ao público e aproveitar para vender as ideias que serão propostas aqui. Então “Hello, World!” e bem-vindos ao meu blog. Afinal, foi com um simples “Hello, World!” que me apaixonei pelo mundo da programação.
