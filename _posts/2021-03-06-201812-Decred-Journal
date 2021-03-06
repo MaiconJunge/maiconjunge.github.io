@@ -1,0 +1,297 @@
+---
+layout: post
+title:  "Hello World!"
+date:   2021-02-16 22:47:00
+categories: Diversos
+comments: true
+---
+<br>
+Dezembro foi um mês de progresso considerável, encerrando um ano fenomenalmente produtivo para a Decred. Algumas das primeiras propostas aprovadas na Politeia estão começando a ganhar força, como a presença da Ditto nos canais de comunicação e a elaboração do plano de marketing para 2019 em colaboração com toda a comunidade.
+
+Os releases da versão 1.4.0 estão disponíveis para download no GitHub. Entusiastas estão convidados a experimentá-los, enquanto os usuários regulares são aconselhados a aguardar a liberação final. Como sempre, verifique as assinaturas para garantir que o software está vindo inalterado diretamente dos desenvolvedores.
+
+A wallet dcrandroid para o sistema operacional Android também viu seu primeiro release disponível na Google Play Store. Ela se beneficia do modo SPV da Decred, que permite proteger a privacidade do usuário solicitando blocos diretamente da rede P2P, em vez de um provedor de serviço centralizado — raro para mobile wallets. Além da cautela em relação aos releases, esteja ciente de que o ambiente móvel apresenta preocupações de segurança adicionais e não é aconselhável para grandes somas de DCR.
+
+Apesar de dezembro ter sido um mês difícil para o mercado, com queda de preços e contrações de financiamento, a Decred continua imperturbável e o cenário é de continuidade da expansão e aceleração em 2019.
+
+Feliz ano novo da equipe do Jornal Decred a todos os leitores!
+Desenvolvimento
+
+dcrd: A versão 1.4.0 RC2 foi liberada. Esta versão inclui o estimador de fee inteligente, que permite ao usuário minimizar o atraso de mineração ou a fee, dependendo das necessidades. O recurso é importante para a Lightning Network e como um mecanismo geral para lidar com o congestionamento de rede. Os Whitelisted inbound peers agora são permitidos, independentemente do limite de conexão, para que os operadores sempre possam permitir seus próprios clientes SPV. Diversas melhorias de desempenho para sincronização inicial, validação e operações de rede estão incluídas. Os usuários que escolherem a atualização devem observar que há uma migração de banco de dados única que levará de 30 a 60 minutos, dependendo do hardware. Veja a lista completa de mudanças nas notas de release.
+
+Uma vulnerabilidade foi corrigida na ferramenta go get, que permitia a execução remota de código ao usar um repositório malicioso. A Decred não foi afetada. Semelhantemente, para o dcrd, todas as mudanças nas dependências, exceto o runtime Go, são auditadas. Essa é uma das razões pelas quais é preciso tanto esforço para preparar Releases do dcrd e porquê o número de dependências deve ser limitado. Mais detalhes neste chat.
+
+Uma discussão foi [iniciada] (https://github.com/decred/dcrd/issues/1556) sobre a implementação do Child Pays For Parent (CPFP) no dcrd.
+
+dcrwallet: A versão 1.4.0 RC2 corrige muitos bugs relacionados ao SPV e ao tratamento de erros, e adiciona um host de novos endpoints gRPC que habilitarão novos recursos nas interfaces de usuário final. Conexões Tor ao node dcrd agora são possíveis com o modo proxy. A fee de retransmissão de transação padrão foi reduzida para 0,0001 DCR com atualizações de rede suficientes. Mais mudanças nas notas de releases.
+
+Decrediton: A versão v1.4.0 RC2 apresenta suporte inicial a Trezor, melhorias de design e muitas correções de bugs. O suporte inicial a Trezor permite que os usuários utilizem a Decrediton como uma wallet “somente para observar” que assina transações com a Trezor. O recurso ficará oculto atrás de uma opção de configuração até ser suficientemente testado. Staking ainda não é suportado, mas está previsto para um futuro próximo. Em geral, as wallets “somente para observar” agora são capazes de criar transações não assinadas que podem ser transferidas para outro dispositivo para assinatura e transmissão. A página de governança recebeu uma grande reformulação e um recurso importante para notificar os usuários sobre novas propostas e votos. Uma nova página para escolher entre o SPV e o modo de validação completa agora é mostrada na primeira carga. O tema escuro inicial pode ser ativado em Configurações (as cores estão sendo finalizadas). Mais detalhes para estas e outras mudanças estão nas notas de releases.
+
+No master branch (ou seja, não incluído na versão 1.4), a Decrediton agora pode ser construída para o Raspberry Pi.
+
+Muito do trabalho de design está concluído e pronto para implementação.
+
+Politeia: A mais recente atualização de segurança rendeu à Politeia uma classificação A+ no securityheaders.com, o que a colocou entre os 3% mais bem classificados do site e (brevemente) no Hall da Fama. Um recurso para visualizar versões antigas de propostas é adicionado como parte de um visualizador de comparação de versão maior que precisa de mais trabalho. O politeiavoter agora repete solicitações com falha, o que corrige o uso do Tor. O cálculo da pontuação dos votos foi corrigido, movendo-o de politeiad para politeiawww. As propostas agora não podem ser abandonadas após a votação ter sido autorizada. Essas e pequenas correções estarão disponíveis no site de propostas após a próxima implantação.
+
+Em andamento estão os backups de dados do administrador e duas grandes mudanças para escalonar o servidor: cache layer e suporte a websockets.
+
+dcrandroid: O RC 2 da versão v1.0.0 está disponível no Google Play para mainnet e testnet. As interfaces de verificação de seed e restauração de seed foram completamente refeitas e diversos bugs foram corrigidos. A lista de melhorias pode ser encontrada no GitHub — a discussão e o feedback aqui.
+
+O próximo RC a ser liberado em breve incluirá várias pequenas correções de bugs, bem como uma melhor exibição do status durante a sincronização inicial, o que foi solicitado por muitos usuários.
+
+O foco tem sido na simplificação da experiência de configuração para novos usuários, já que esta é a primeira coisa que eles veem e, às vezes, pode ser entediante.
+
+Limitações da criptografia da wallet e os riscos do staking em smartphones Android inseguros foram discutidos neste chat.
+
+dcrios: Acaba de ser sincronizado com as mudanças do Android. As liberações de teste para iOS serão disponibilizadas assim que o Android 1.0 for concluído.
+
+dcrdata: A versão 3.1.1 foi liberada no site principal. Os destaques incluem novas páginas para sidechains e [disapproved blocks](https://explorer.dcrdata.org/rejects), grandes melhorias de desempenho, suporte a módulos Go, melhorias no modo não-javascript (graças a um dinossauro anti-js!). Veja as notas de releases completas aqui. A release inclui 129 commits de 4 meses de trabalho feitos por 16 contribuidores. Parabéns à equipe dcrdata!
+
+No master, um recurso para fazer download de transações de um único endereço quando um CSV é concluído. Vários grandes refatores são mesclados para empregar as melhores e modernas práticas de frontend.
+
+O serviço público do Tor para dcrdata foi encerrado temporariamente após um ataque DDoS. Depois de alguma conversa, foi trazido de volta em dcrdata2opeenddl.onion.
+
+Os desenvolvedores podem verificar a nova imagem do Docker para criar e testar dcrdata e uma nova página de FAQ no wiki.
+
+Ticket splitting: Versões 0.7.0 e 0.7.2 liberadas. Destaques: suporte ao cliente SPV (leia a respeito nos avisos de privacidade), melhor segurança com token de sessão, suporte ao OpenBSD e melhores relatórios. Encontre os downloads no GitHub. Verifique as assinaturas para se certificar de que os binários realmente vêm de @matheusd.
+
+docs: Com base na infraestrutura de redirecionamento apresentada anteriormente, o trabalho começou a arrumar as URLs e a estrutura de diretórios. Agenda Voting foi alterada para Consensus Rules Voting. A estrutura de tradução foi removida. O glossário foi ampliado com novos termos. Foi adicionado novo guia para SPV. Os documentos da Politeia foram atualizados agrupando as páginas da Politeia, adicionando páginas para a página de Diretrizes de Proposta e Exemplo de Proposta.
+
+decred.org: os cabeçalhos das páginas foram alterados de javascript para vídeos, o Rocket.Chat foi removido da página da Comunidade, o Decred Business Brief agora está disponível como uma página da web, além do download do PDF.
+
+Outros
+
+    @matheusd propôs uma prova de conceito off-line tx signer que permite assinar transações em uma máquina diferente (Raspberry Pi). Envie a sua opinião a ele se gostaria que isso fosse mais desenvolvido.
+    authit é uma IU de prova de conceito para timestamping de arquivos via dcrtime. O código fonte está agora sob organização da Decred, a discussão está aqui. Créditos para @fernandoabolafio, @tiagoalvesdulce e @vctt.
+    @devwarrior está trabalhando em uma IU de prova de conceito para atomic swaps. Entre em contato com ele através do chat para colaborar e trazê-lo para para o Decred.
+    Um pull request (PR) para adicionar suporte ao QTUM ao atomicswap foi enviado, sinta-se à vontade para participar da análise e do teste. Um PR mais antigo de suporte ao Ethereum também pode se beneficiar com mais observadores.
+    As ferramentas de linha de comando do Decred podem ser compiladas para rodar no Alpine Linux que usa musl (implementação mais limpa da libc), leia este chat para mais detalhes.
+    Esforços para coordenar as traduções de artigos vitais da Decred estão sendo realizados para introduzir uma base maior de usuários que não falam inglês aos principais conceitos da Decred.
+
+Estatísticas de atividade de desenvolvimento para dezembro: 230 PRs ativos, 196 master commits, 33K adicionados e 106K linhas excluídas espalhadas por 8 repositórios. As contribuições vieram de 3 a 9 desenvolvedores por repositório (gráfico).
+Pessoas
+
+Bem-vindos novos colaboradores: aerth (dcrwallet), @guang (decrediton) e tpkeeper (politeia).
+
+30000fps tem sido um colaborador de design da Decred desde meados de 2018. Um dos objetivos do seu trabalho foi trazer o desenvolvimento esclarecedor, encontrando maneiras significativas de visualizar e ilustrar os processos e recursos que, de outra forma, não seriam vistos. Exemplos podem ser vistos a partir dos visuais de desenvolvimento (recentes release v1.4.0 (4 MB), release Politeia, release v1.3.0), bem como a revisão dos cabeçalhos animados de subpáginas do decred.org.
+
+3 contribuidores foram removidos do site decred.org.
+
+Vários contratados compartilharam suas experiências de integração neste chat, o que é um bom relato em primeira mão para ser lido a fim de entender como é o processo, particularmente para aqueles potencialmente interessados ​​em se tornarem contratados da Decred. @richardred publicou um excelente post, “Working for the Decred DAE”, que descreve detalhadamente sua jornada na Decred.
+
+Diversos contratados independentes estão preparando um documento comunitário de roadmap, onde esboçam seus planos para 2019.
+Governança
+
+Em dezembro, o Treasury recebeu 17.016 DCR e gastou 12.570 DCR. Usando a cotação DCR/USD média diária em dezembro de US$ 17,5, isso significa US$ 298 mil recebidos e US$ 220 mil gastos. Como esses pagamentos foram para trabalhos concluídos em novembro, também é informativo considerá-los no contexto da cotação média diária em novembro de US$ 32,5 — caso em que os valores recebidos/gastos foram de US$ 553K/US$ 409K.
+
+Aqui estão curtas atualizações de propostas feitas a partir de 10 de janeiro. Não confie nelas para formar sua opinião sobre as propostas e leia os textos e discussões originais a respeito na Politeia.
+
+    Open Source Research 2: As pesquisas e análises estão progredindo, 4 novas ideias de pesquisa foram postadas na proposta. Por favor, comente e vote nos comentários para dar aos colaboradores da pesquisa uma ideia melhor do que é mais útil.
+    A proposta da stablecoin foi majoritariamente criticada; o autor cancelou a proposta.
+    Integração com a Coffee Wallet: o proprietário ofereceu-se para reduzir o valor solicitado, mas a comunidade, geralmente, não fica muito animada em pagar por integrações. A proposta ficou inativa por algum tempo e foi marcada como abandonada, o dono da proposta retornou mais tarde para dizer que não pretendia abandoná-la.
+    Propostas rejeitadas: anúncios em rádio (69% não), Decredex (96% não), integração com ATM Bcash (89% não); a participação variou entre 24 e 31% dos tickets.
+    Baeond: Jogo de cartas autônomo e futurepunk: As discussões estão em andamento, o autor está envolvido nos comentários e no chat, e atualizou a proposta em resposta ao feedback, muitas pessoas estão confusas sobre como isso beneficiará a Decred.
+    Parceria Smart Reach: as discussões estão em andamento.
+
+A proposta de Bug bounty foi aprovada com 90% sim e 30% de participação. @degeri demonstrou um ótimo exemplo de como passar por todas as etapas: juntar-se à comunidade e demonstrar a capacidade de fazer um trabalho útil, identificar algo que está faltando, elaborar uma ideia e passar por várias rodadas de feedback, enviar uma proposta, engajar com comentários e ajustar, e, finalmente, receber uma aprovação. Um fato notável aqui é que a Decred é um dos poucos projetos em que um colaborador sob um pseudônimo pode construir confiança e se tornar bem-sucedido, estabelecendo um histórico de entrega de trabalho de alta qualidade.
+
+Para evitar erros comuns e criar uma proposta bem-sucedida, leia as novas Diretrizes de Proposta, por @s_ben (inspirado em um excelente comentário de @nnnko56).
+
+Company0 não está cobrando o Treasury pelo trabalho na privacidade, conforme esclarecido neste tópico.
+
+Discussões: Este chat discute a frugalidade com os gastos do Treasury, especialmente durante as más condições do mercado. Esse tópico desmantelou argumentos comuns contra o sistema de governança do Decred: “não sabemos se o sistema de governança funciona porque ainda não falhou” e “ainda não houve nada controverso”. Acontece que é difícil para uma controvérsia ser formada em um sistema explicitamente desenhado para evitá-la.
+
+Uma cobertura muito mais sutil da atividade da Politeia é fornecida por @richardred na edição 8 e na edição 9 do Politeia Digest. O resumo captura muitos detalhes interessantes de cada proposta. A edição 9 contém uma revisão dos dados de 2018 da Politeia desde o seu lançamento. Você pode encontrar todos os temas anteriores e deixar comentários aqui.
+Rede
+
+Hashrate: O hashrate de dezembro abriu com cerca de 167 Ph/s e fechou em torno de 183 Ph/s, chegando a 207 Ph/s e atingindo 110 Ph/s ao longo do mês. Na maior parte, a média foi de 150 Ph/s. A partir de 10 de janeiro, o hashrate das pools será distribuído da seguinte maneira: poolin 34%, o F2pool 27%, UUPool 7,4%, btc.com 7%, Luxor 3,8%, BeePool 2,6%, coinmine 1,1%, outros 17%, de acordo com o dcrstats.com. Os números de distribuição são aproximados e não podem ser determinados com precisão.
+
+Staking: O preço médio do ticket em 30 dias foi de 103 DCR (+0) de acordo com o dcrstats.com. O preço variou entre 101 DCR e 107 DCR. A quantia bloqueada foi de 4,14–4,23 milhões de DCR, o que correspondeu a 46,3–47,1% da oferta disponível.
+
+Nodes: a partir de 1º de janeiro, havia 192 public listening nodes e 253 normal ones de acordo com o dcred.eu. Distribuição das versões: 1,5% são v1.5.0 (pré) dev builds, 1,8% na v1.4.0 (rc1), 5,3% na v1.4.0 (pré) (-1,2%), 55% na v1.3.0 (+5%), 20% na v1.2.0 (-5%), 10% na v1.1.2 (-1%), 4% na v1.1.0 (-1%).
+
+Há muitas outras estatísticas interessantes que gostaríamos de apresentar nesta seção. Informe-nos se puder ajudar.
+
+O bloco 300.000 foi minerado em dezembro e a quantidade de DCR agora é superior a 9.000.000. Parabéns a todos!
+Mineração
+
+Whatsminer D1:
+
+    A avaliação foi postada em chinês (tradução do Google).
+    A Luxor postou um guia de configuração
+    O Whatsminer.net relatou ter enviado todos os pedidos do lote 1
+
+A mineradora Antminer DR5 do Bitmain foi apresentado no Twitter e recebeu algumas críticas. Especificações: 34 Th/s a ​​1.800 W, com preços a partir de US$ 1.400. Este tópico discutiu o assunto e os desafios para pequenos mineradores ou hobbystas.
+
+Tenha cuidado ao encomendar mineradoras do eBay, você pode receber apenas a carcaça ou o peso.
+Integrações
+
+A empresa de hardware wallet Ledger anunciou que a tão esperada integração com DCR está completa:
+
+Temos o prazer de anunciar que a Ledger Nano S e a Ledger Blue são agora compatíveis com a Decred. A Decred agora está disponível no Ledger Live e marca a primeira integração nativa do Ledger Live desde o seu lançamento. Leia mais aqui (@LedgerHQ)
+
+O armazenamento da DCR é possível através do Ledger Live, um aplicativo que agora atua como um balcão único para acessar e interagir com seus crypto assets desde que a Ledger interrompeu o uso de seus respectivos aplicativos no início deste ano.
+
+A Cobo Wallet anunciou um serviço de staking custodial. Discutido aqui.
+
+Para qualquer hardware e software wallet, faça sempre a sua própria pesquisa e pergunte como funciona. Você controla as chaves? Você perde o consenso e os direitos de voto na Politeia? Há comunicação com os nodes da Decred diretamente ou através de intermediários? O serviço compartilha seus dados com terceiros? O código-fonte é aberto e auditável?
+Divulgação
+
+Dezembro marcou um mês emocionante para a Decred, já que a Ditto começou a trabalhar. A primeira iniciativa foi fazer apresentações e determinar o fluxo de trabalho. Agora você verá nossos bons amigos, Liz Bagot (@liz_bagot), Trey Ditto (@treydpr), Margaret Mei (@margaret_mei), Blain Rethmeier (@blainr) e Milvian Preito (@milvian), em várias salas da Matrix, incluindo #marketing, #ditto_pr e #writers_room.
+
+O trabalho começou a sério nas mensagens, que pode ser visto aqui. A entrada contínua é sempre valorizada. Ao mesmo tempo, estamos trabalhando com a equipe de design para integrar novas mensagens ao site e expandir o conteúdo com novas páginas, explicando aspectos importantes da Decred.
+
+As mensagens devem ser acordadas em janeiro e um trabalho começará no site. Um plano incluindo eventos e outras táticas também será publicado em janeiro. (@ Dustorf)
+
+O pessoal da Ditto se juntou ao #marketing e a sala ficou bastante movimentada durante todo o mês, com muitos brainstormings e discussões sobre as mensagens.
+
+@Dustorf, @ jy-p e a Ditto se encontraram em Nova Iorque e postaram um relatório no chat. Entre outras coisas, eles discutiram sobre os desafios relacionados a atrair novos desenvolvedores e colaboradores, divulgar a Decred a investidores, instituições e governos, além de revisar a visão de longo prazo do projeto.
+
+Trey publicou a visão geral da Ditto em 2019 e a estratégia para a Decred. Depois disso, uma pesquisa foi realizada no Reddit perguntando como a comunidade descreveria a Decred, quais mídias consumiam e como achavam que Decred deveria atrair desenvolvedores.
+
+Em meados de dezembro, @liz_bagot deu o primeiro Ditto Bi-Weekly Update e depois resumiu o trabalho do mês:
+
+    No início de Dezembro tivemos uma reunião de 2,5 horas com Dustin e Jake em nosso escritório no Brooklyn.
+    Criamos uma plataforma de mensagens básicas contendo um detalhamento dos públicos-alvo da Decred, uma seção sobre o assunto, uma declaração de missão, uma declaração de visão e instruções de posicionamento exclusivo para cada público-alvo. Nós enviamos a plataforma de mensagens à comunidade Decred para feedback e pretendemos fazer outra iteração do documento incorporando o feedback em janeiro.
+    Participaram e enviaram repórteres da Breaker Mag, Forbes e Fortune para o meetup da Decred em Nova Iorque.
+    Foram organizadas entrevistas com duas grandes empresas da mídia e membros da comunidade Decred. Nenhuma data de publicação foi definida.
+    Apresentamos o comentário do Jake sobre as previsões para 2019 para repórteres e garantimos cobertura no NullTX, no Crypto Briefing, no The Daily Hodl e no CCN.
+
+Agora, um total de cinco membros bem conhecidos da comunidade têm o direito de twittar via @decredproject. Você pode ler sobre como isso funciona aqui.
+Eventos
+
+A Decred realizou seu primeiro meetup em Nova Iorque em 5 de dezembro, na Distributed Global, no Flatiron District. O público de cerca de 80 pessoas incluiu VCs, desenvolvedores de outros projetos, mídia e membros da comunidade Decred. @jy-p fez uma apresentação geral (foto) da Decred e, em seguida, aprofundou-se nos detalhes técnicos do Sistema de Propostas Politeia, incluindo como funciona e a potencial amplitude de suas aplicações.
+
+Em seguida, Chris Dannen, Fundador da Iterative Capital, discutiu a maneira como o trabalho evoluiu, particularmente na era do software open-source. A Tese da Iterative Capital explica esse pensamento com muito mais detalhes. Dannen explicou como o Treasury da Decred se encaixa brilhantemente em uma tendência massiva de trabalho que fornece aos trabalhadores a autonomia desejada e permite que façam seu melhor trabalho.
+
+Por fim, Chris Burniske e Joel Monegro, da venture capital Placeholder, realizaram um bate-papo informal explicando o valor da Decred na perspectiva de um investidor institucional. Chris revelou o raciocínio financeiro, incluindo:
+
+    Time — btcsuite quando lançado foi tão bom quanto qualquer coisa feita pelo Bitcoin Core.
+    O sistema híbrido PoW/PoS é mais seguro do que qualquer outra rede
+    O financiamento do Treasury permite que o desenvolvimento seja financiado a longo prazo.
+    Resistência aos Forks — A Decred é projetada para manter a comunidade unida através do consenso.
+
+Joel compartilhou seu apreço pelo sistema de governança da Decred e sua capacidade de torná-la polimórfica, adicionando recursos e funcionalidades conforme a comunidade decide. Eles concluíram que a Decred é construída/desenhada para um horizonte de várias décadas. Eles compartilharam alguns dos bons trabalhos que estão realizando em nome da Decred no que diz respeito à custódia, intercâmbio e staking institucional, e concluíram que a maior dificuldade que a Decred enfrenta atualmente é a liquidez.
+
+O Founders Night ocorreu no dia seguinte, 6 de dezembro, e foi a festa de fim de ano da Distributed Global. Eles trouxeram todos os gerentes de fundos de vários escritórios e convidaram seus investidores, parceiros e membros de vários projetos em seu portfólio. Foi uma ótima oportunidade para conhecer esses vários grupos e construir relacionamentos para futuros eventos em Nova Iorque. A primavera está sendo a época escolhida para o próximo evento da Decred em Nova Iorque.
+
+Outros eventos observados:
+
+    Apresentação na Universidade de Tecnologia em Amozoc, México. @elian falou com os alunos sobre as habilidades para o futuro e observou: “como parte da minha experiência, falo brevemente sobre a Decred como um projeto inovador, no qual as habilidades digitais se tornam ferramentas essenciais para a colaboração. Este não foi um meetup criptográfico, mas sim uma palestra motivacional para os estudantes de análise de negócio, para incentivá-los a adquirirem habilidades digitais. Por se tratar de uma pequena universidade distante das grandes cidades, esse tipo de conteúdo é muito apreciado. Como parte da minha experiência em tecnologia e mercados digitais, compartilho com eles minha experiência de trabalho em um projeto open-source como a Decred, como um exemplo das oportunidades que surgem dos mercados da Internet. Acho que foi muito interessante para eles perceberem que existe uma grande economia fluindo pela Internet com infinitas possibilidades”. (foto)
+    Apresentação da Decred em Toronto, Canadá. @michae2xl e @zubairzia0 foram os anfitriões do evento e notaram que, apesar da pequena participação, as pessoas estavam procurando se conectar com uma comunidade local da Decred e estavam animadas em ajudar organizar o próximo evento. (foto).
+
+Próximos:
+
+    OKEx Taiwan MeetUp em Taipei, Taiwan, em 17 de janeiro. A primeira metade do evento será apresentada pelos 3 projetos (Decred, EOS e NEM, 20 min cada), e a outra metade será um painel discutindo sobre on-chain voting (30 minutos). @morphymore irá falar.
+    Binance Blockchain Week em Singapura nos dias 21 e 22 de janeiro. @guang participará e representará o Decred.
+    10 lat Bitcoina em Varsóvia, Polônia, em 26 de janeiro. @Karamble fará uma apresentação na conferência celebrando o 10º aniversário do informe oficial do Bitcoin e do próprio Bitcoin. Os detalhes sobre a Decred ainda serão anunciados.
+    TabConf em Atlanta, EUA, em 8–10 de fevereiro. @moo31337 apresentará “Decred 101: An introduction to Decred” em 9 de fevereiro.
+    The North American Bitcoin Conference em Miami, EUA, de 16 a 18 de janeiro. @jy-p apresentará a Politeia e explorará uma ampla variedade de aplicativos que podem utilizá-la. Por favor, envie uma mensagem a @Dustorf se estiver interessado em ajudar na apresentação.
+    Campus Party em São Paulo, Brasil, de 12 a 17 de fevereiro. A Decred terá palestrantes e uma área dedicada para hackathons.
+    Jalisco Talent Land em Guadalajara, México, de 22 a 26 de abril. A Decred terá um estande. @elian apresentará uma visão geral da Decred com Q&A, além de orientações sobre como usar o software e votar. Entre em contato com @elian se estiver interessado em ajudar/participar.
+
+Pergunte na sala #event_planning para quaisquer questões.
+Mídia
+
+Artigos selecionados:
+
+    Bitcoin Miners Go Silent As Price Falls (cryptobriefing.com, também em chinês)
+    Detailed analysis of Decred fork resistance por @Haon (medium)
+    Decred and Ditto in 2019 por Trey Ditto (medium, pesquisa e discussão d comunidade aqui
+    Fundamental Pick: Decred by BBOD Research (blog.bbod.io, também em chinês e japonês)
+    Decred Co-founder Pronounces 2018 as the “Death of the ICO Model” (nulltx.com)
+    2018 in 4 Words — ICOs and Ethereum Died (ccn.com)
+    The practical cypherpunk: Marco Peereboom of Decred (coinrivet.com)
+    Decred: Governance and Funding Reimagined (51pct.io)
+    Working for the Decred DAE by @richardred (medium)
+
+Traduções:
+
+    Jornal Decred — Novembro de 2018 em espanhol por @elian, em polonês por @kozel e em russo por @DZ, em chinês por @guang. A edição de novembro foi a maior até agora (59 KB), obrigado a todos pelo épico esforço de tradução!
+    Todas as traduções do Jornal Decred têm links na home page
+    Análise detalhada da resistência contra forks da Decred, por @Haon — em polonês.
+    How to Get Hired as a Decred Contractor, por @Haon — em chinês. Vídeos:
+    On The Record com Murad Mahmudov — Bitcoin para 2019 no programa Tone Vays (YouTube, comentários sobre a Decred em torno de 1 hora).
+
+Áudio:
+
+    Free Talk Live 2018–10–27: Entrevista com Marco Peereboom da Decred, na Texas Bitcoin Conference (soundcloud, na edição de outubro).
+    Unchained, episode 100: Antigos convidados e ouvintes assumem o programa (unchainedpodcast.co, @joshuam em 55:12)
+    Episode 18: Murad Mahmudov on Bitcoin (didyouknowcrypto.com): Os tópicos abordados são utopismo, economia austríaca, a próxima recessão, o futuro do Bitcoin e que a Decred deveria estar no top 3.
+
+Discussões da comunidade
+
+As estatísticas da comunidade a partir de 1 de janeiro:
+
+    Seguidores no Twitter: 39.884 (-120);
+    Inscritos no Reddit: 9.241 (+110);
+    Usuários da Matrix: 221 (+18);
+    Usuários no Slack: 6.419 (+66);
+    Usuários no Telegram: 4.734 (+92);
+    Inscritos no YouTube: 3.738 (+2);
+    Seguidores no Facebook: 3.121 (+16), curtidas: 2.880 (+13);
+    Seguidores no LinkedIn: página Decred 450 (+17), página Politeia 24 (+4);
+    Estrelas o GitHub dcrd: 458 (+11), forks: 1.192 (+33).
+
+Além disso, existem comunidades do Telegram em chinês (661, +119), português (435, +99) e italiano (120). O @michae2xl também está administrando o @decredproject no Instagram, com 396 seguidores em 6 de janeiro.
+
+Notícias dos sistemas de comunicação:
+
+    @dhill eliminou um bug no matterbridge que bloqueava a retransmissão de mensagens do Slack para outras plataformas. Por favor, relate quaisquer problemas que você notar.
+    O canal #smart_contracts foi arquivado devido a inatividade.
+    Rocket.Chat está sendo desativado.
+
+O protótipo do community issue tracker foi lançado para discutir ideias acionáveis ​​em um formato mais estruturado. Qualquer ideia que beneficie o projeto pode ser discutida. Na data de 10 de janeiro, há 73 issues como ideias de artigos, PRs, arquivamentos e preservação de dados ou discussões sobre plataformas de comunicação. Por exemplo, essa issue lança uma tarefa desafiadora para encontrar um bom nome para o algoritmo de consenso híbrido PoW/PoS da Decred e lista todas as opções sugeridas até o momento. Você pode se inscrever em tudo com o botão “Watch” na parte superior ou em questões individuais com o botão “Subscribe” no painel direito. Existe uma crença popular de que o “GitHub é para desenvolvedores” — isto não é verdade. Postar questões e comentários e “+1” não é mais difícil do que usar o Reddit ou o chat e, de fato, vários leigos já contribuem para isso.
+
+O incidente do Reddit nos mostrou outra fraqueza na plataforma. Vários tópicos foram iniciados e provocaram discussões úteis, mas foram posteriormente removidos pelo autor. Isso desperdiçou o esforço de todas as pessoas que se deram ao trabalho de responder. Os tópicos excluídos foram em parte “ressuscitados”, mas geralmente esse incidente mostra um vetor de ataque/sabotagem: “desencadeie a discussão e exclua o tópico, desperdiçando energia da comunidade”. O Reddit não tem uma defesa contra isso, pois os moderadores não podem impedir que os usuários excluam seus conteúdos. O evento levou a uma discussão sobre uma substituição do Reddit que provavelmente poderia derivar da Politeia.
+
+Novamente, muitas atividades suspeitas no Reddit ocorreram próximas da nossa principal release. É uma quantidade incomum de questões sobre assuntos menos relevantes ou questões “inocentes” sobre coisas triviais ou algo similar. Tudo vindo de contas nunca antes vistas e que somem depois da curta interação. Este comunicado é para informar as pessoas que se importam com o projeto para se protegerem contra atividades estranhas que podem afetar a Decred, assim como sua energia individual. Leia este chat para mais detalhes.
+Mercados
+
+Em dezembro, a DCR estava sendo negociada entre US$ 14,2–21,4/BTC 0,0042–0,0058. A cotação média diária foi de US$ 17,5. Um curto aumento de preço ocorreu para US$ 20,9/BTC 0,0058 com o aumento do volume para US$ 5–6 milhões em comparação com US$ 0,8–1,2 milhão nos outros dias. Observe que os dados do volume de negociação não são confiáveis, conforme observado abaixo.
+Informações externas relevantes
+
+O Vertcoin (VTC) foi alvo de um ataque do tipo (51%) (4 incidentes), no qual ocorreram 22 reorgs e 15 double spends, custando às vítimas cerca de US$ 100.000. Um dos impactos desses ataques é que a moeda passa a ser considerada insegura, porque falhou em seu propósito. Qualquer um que ainda esteja disposto a aceitá-la pode precisar de um número muito alto de confirmações antes de realizar uma transferência, tornando a movimentação muito lenta.
+
+O líder da equipe da Horizen (anteriormente ZenCash) anunciou recentemente uma ação estratégica para aumentar as recompensas do bloco do Treasury de 10% para 20%, reduzindo a parcela de recompensas para mineradores. Após uma redução de 90% no preço e reduções significativas na equipe e outros custos, considerou-se que cortar mais custos significaria colocar em risco o projeto. Como o sistema do Treasury que está sendo desenvolvido pela IOHK ainda é um protótipo e não está pronto para uso, a equipe Horizen sentiu a necessidade de tomar uma decisão unilateral para mudar a recompensa do bloco.
+
+O produtor de bloco EOS começou a pagar os holders que votaram.
+
+A primeira rodada de votação das Aragon Governance Proposals (AGPs) foi atrasada devido à potencial instabilidade da rede em torno do hard fork da Ethereum Constantinople — esperamos que “blockchain desligada para manutenção” não seja um problema que a Decred encontre com a Politeia. O CEO da Aragon Association publicou uma lista negra e uma lista de desejos de propostas antes da abertura do envio de propostas. Na primeira proposta, o próprio processo da AGP foi aprovado por 99,97% da ANT que votou. No total, 2,6% de todos os tokens ANT foram votados na primeira proposta, a partir de 45 endereços únicos, com aproximadamente 60% dos votos da ANT provenientes de um endereço. As AGPs passam por uma revisão do conselho da Aragon Association, em seguida, uma revisão da comunidade, antes de um período de votação de 48 horas ser aberto.
+
+Dois milhões de BTCP foram extraídos por meio de um exploit e passaram meses sem serem notados até que a CoinMetrics percebeu que algo estava errado com o fornecimento. A equipe de desenvolvedores postou uma declaração oficial confirmando a situação. O bug foi contornado em 5 de janeiro de 2018, juntamente com um bounty hunter de recompensas que se desligou depois de receber a recompensa por seu trabalho. Apenas uma linha de código ausente causou um grande dano à proposta de valor da rede. Podemos aprender muito com esta experiência infeliz: cobertura extensiva de testes, revisão crítica do código de consenso, reputação estabelecida de desenvolvedores trabalhando em partes críticas e ter múltiplas implementações do protocolo são muito importantes para construir um sistema em que possamos confiar o dinheiro.
+
+Houve um ataque à infraestrutura do Electrum. Alguém iniciou vários servidores maliciosos do Electrum que levaram o usuário a “atualizar” para uma versão maliciosa e mais de 200 BTC foram roubados. O modelo Electrum envolve uma rede de servidores que ficam entre os clientes e os nodes. Cada cliente depende do servidor ao qual se conecta, o que compromete a privacidade do usuário, pois os proprietários desses servidores podem inferir quais wallets são de propriedade dos usuários. Se os servidores do Electrum forem comprometidos, possibilitaria alguns ataques adicionais. A Decred optou por não desenvolver a infraestrutura do Electrum, mas sim seguir diretamente para o SPV com base em filtros do lado do cliente. Isso atrasou o desenvolvimento de clientes leves, mas o modo SPV agora trabalha na dcrwallet, Decrediton e drcandroid e se conecta diretamente aos nodes, funcionando independentemente de qualquer provedor de serviço, o que aumenta a privacidade dos usuários como resultado.
+
+Pesquisadores de segurança demonstraram várias maneiras de hackear as hardware wallets mais populares, se tiverem posse física do dispositivo.
+
+O relatório de volume de negociações mais recente da blockchaintransparency.org concluiu que, dos top 25 pares de BTC da coinmarketcap.com, mais de 80% do volume é manipulado. Outra constatação infeliz é que metade dos projetos gastaram mais de US$ 50.000 em taxas de listagem. O relatório estimulou a ideia de analisar o volume de negócios em DCR.
+
+A Coinbase está tentando ser proprietária do termo “BUIDL”.
+
+Muitos serviços e projetos de criptomoeds parecem ser de propriedade ou copropriedade de apenas um pequeno grupo de entidades, com bancos no topo.
+
+Várias exchanges centralizadas não aprovaram saques durante o evento anual Proof-of-Keys.
+
+O Slack acidentalmente bloqueou pessoas que visitaram o Irã. Mais tarde, o Slack se desculpou pelo incidente e esclareceu a situação. Mas o sinal é claro e não é nenhuma surpresa: a Slack Technologies é uma corporação dos EUA (financiada por capital de risco) que cumpre as leis dos EUA. Em contraste, as salas Matrix podem ser federadas em vários servidores, por isso, mesmo que alguns servidores participantes sejam desligados, os servidores em outras jurisdições podem continuar servindo o chat e o histórico.
+
+Houve uma série de artigos em dezembro sobre demissões no mundo da criptográfico (e alguns dizem que não é tão ruim em relação a outros setores). Para outros projetos com Treasuries, estes também são tempos difíceis, como foi observado para a Horizen acima e podem ser vistos em algumas discussões da comunidade Dash. Podemos agradecer às pessoas que administraram o Treasury na era pré-Politeia por seu equilíbrio saudável, e essa é a razão pela qual a Decred ainda está procurando expandir sua força de trabalho enquanto outros projetos se contraem. Com a DCR em US$ 17,5 em dezembro, esse provavelmente será o primeiro mês em que as despesas do Treasury são maiores do que as recompensas. Mesmo que o DCR/USD permaneça baixo por algum tempo, o Treasury pode manter seus gastos atuais equivalentes a USD por vários anos (8 é uma estimativa aproximada ) a esse ritmo antes que os cortes se tornem necessários.
+
+Em meio à maior onda de demissões na esfera cripto, a Bitmain, supostamente, demitiu toda a equipe de desenvolvedores do Bitcoin Cash, que incluía a equipe do Copernicus.
+
+O Copernicus é uma implementação do protocolo Bitcoin Cash escrita em Go que utiliza o btcsuite. A versão pré-release do software foi anunciada e minerou seu primeiro bloco em dezembro. Em seu site, os autores agradecem aos desenvolvedores do btcsuite por seu trabalho e reconhecem sua contribuição para o ecossistema Bitcoin. No blog do Copernicus, a equipe notou que o software “reorganiza e redesenha a estrutura de software para o cliente original, para tornar a estrutura mais concisa, reduzir a dificuldade de aprendizado para os desenvolvedores e aumentar a diversidade de clientes para garantir a segurança de toda a rede BCH”.
+
+O Copernicus não é o primeiro esforço para diversificar a rede do Bitcoin Cash que já possuía várias implementações de C++, Rust e JavaScript em desenvolvimento. Em setembro, duas outras implementações do Bitcoin Cash escritas em Go foram reveladas. Gocoin-cash vem dos criadores do counterparty.cash e é baseado no gocoin (outra implementação do node completo do Bitcoin no Go). bchd, por sua vez, vem do desenvolvedor do OpenBazaar, Chris Pacia. No anúncio inicial do bchd, Chris observou que o btcsuite é “uma das bases de código Bitcoin mais bem desenhadas e escritas” e explicou que permite engajar mais desenvolvedores e construir novos recursos mais rapidamente, comparado às implementações em C++. Também deu a eles o SPV privado do lado do cliente “de graça”. A versão beta foi anunciada em novembro — dois meses desde o bccd, a equipe cresceu para 9 colaboradores e implementou diversas melhorias em relação ao btcd.
+
+A relevância e boa notícia para a Decred aqui é que muito mais desenvolvedores estão olhando para btcsuite, no qual a Decred é baseada e pode se beneficiar com isso.
+Sobre essa edição
+
+Esta é a tradução da 9ª edição do Decred Journal. Ela está disponível no GitHub e Medium. Edições passadas e suas traduções estão disponíveis aqui.
+
+A tradução chinesa do @guang está disponível no Medium, Weibo e GitHub.
+
+A maioria das informações de terceiros é retransmitida diretamente da fonte após uma verificação mínima. Os autores do Jornal Decred não têm capacidade de verificar todas as afirmações. Por favor, tenha cuidado com os golpes e faça a sua própria pesquisa.
+
+Seus comentários e contribuições são bem-vindos no Reddit, GitHub e Matrix.
+
+Créditos (ordem alfabética): bee, Dustorf, guang, Haon, kozel, liz_bagot, MaiconJunge, oregonisaac, raedah, richardred, saender, zubairzia0.
