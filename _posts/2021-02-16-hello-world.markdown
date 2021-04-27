@@ -18,5 +18,5 @@ Não! Aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre voltado
 > "Talk is cheap. Show me the code." - Linus Torvalds
 
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="fiuPzHoc"></script>
-<div class="fb-comments" data-href="https://www.maiconjunge.com/diversos/2021/02/16/hello-world.html" data-width="" data-numposts="5"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="xcyDK1XI"></script>
+<div class="fb-comments" data-href="https://www.maiconjunge.com/diversos/2021/02/16/hello-world.html" data-width="700" data-numposts="5"></div>
