@@ -12,7 +12,7 @@ O meu primeiro contato com desenvolvimento foi em 2007, no curso de Ciências da
 
 <h4>Apenas sobre desenvolvimento?</h4>
 
-Não! Aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre com foco no universo da programação. Caso queira conhecer melhor quem eu sou, leia sobre<a href="/sobre"> Maicon Junge</a>. Se tiver interesse em receber atualizações sobre o blog, inscreva-se ou siga as redesociais.
+Não! Aqui teremos um pouco de tudo, até sobre a minha vida, mas sempre com foco no universo da programação. Caso queira conhecer melhor quem eu sou, leia sobre<a href="/sobre"> Maicon Junge</a>. Se tiver interesse em receber atualizações sobre o blog, inscreva-se ou siga as rede sociais.
 
 > "Talk is cheap. Show me the code." - Linus Torvalds
 
