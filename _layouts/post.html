@@ -25,7 +25,7 @@ post_class: post-template
                     {{ page.categories | array_to_sentence_string | prepend: 'em ' }}
                 {% endif %}
                 
-                <!-- DATA NO FORMATO XX de MÊS de XXXX
+                <!-- DATA NO FORMATO XX de MÊS de XXXX -->
                 <time datetime="{{ page.date | date_to_xmlschema }}">
    {% include date.html date=page.date %}
 </time>
